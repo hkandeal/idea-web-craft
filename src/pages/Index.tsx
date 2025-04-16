@@ -30,8 +30,7 @@ const Index = () => {
             </h1>
           </div>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            I'm a passionate professional dedicated to creating amazing experiences.
-            Explore my work and get in touch!
+          Dive into the captivating journey of discovering who I am and where my career takes flight.Explore my work and get in touch!
           </p>
           <div className="flex justify-center gap-4">
             <Link

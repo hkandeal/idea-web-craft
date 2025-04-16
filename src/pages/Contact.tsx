@@ -81,15 +81,15 @@ const Contact = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <Mail className="text-purple-600" />
-                    <span className="text-gray-600">email@example.com</span>
+                    <span className="text-gray-600">hossam.mousa@hotmail.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone className="text-purple-600" />
-                    <span className="text-gray-600">+1 234 567 890</span>
+                    <span className="text-gray-600">+971 5536 70093</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="text-purple-600" />
-                    <span className="text-gray-600">Your Location</span>
+                    <span className="text-gray-600">Dubai, UAE</span>
                   </div>
                 </div>
               </div>
