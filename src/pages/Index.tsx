@@ -1,7 +1,8 @@
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Index = () => {
   return (
@@ -13,9 +14,21 @@ const Index = () => {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Welcome to My Website
-          </h1>
+          <div className="flex flex-col items-center mb-6">
+            <Avatar className="w-32 h-32 mb-4">
+              <AvatarImage 
+                src="/placeholder.svg" 
+                alt="Your Profile" 
+                className="object-cover"
+              />
+              <AvatarFallback>
+                <User className="w-16 h-16 text-gray-400" />
+              </AvatarFallback>
+            </Avatar>
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+              Welcome to My Website
+            </h1>
+          </div>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             I'm a passionate professional dedicated to creating amazing experiences.
             Explore my work and get in touch!
