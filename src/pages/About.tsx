@@ -14,16 +14,22 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-6">
               <p className="text-lg text-gray-600">
-                Hello! I'm a passionate professional with expertise in my field. I love creating
-                meaningful experiences and solving complex problems.
+                Hey there! I'm a passionate explorer with an insatiable thirst for adventure and discovery.
               </p>
               <p className="text-lg text-gray-600">
-                With years of experience in the industry, I've developed a keen eye for detail
-                and a commitment to excellence in everything I do.
+                Whether I'm wandering through the corridors of ancient history or delving into the latest technological innovations, I'm always seeking out new experiences.
               </p>
               <p className="text-lg text-gray-600">
-                When I'm not working, you can find me exploring new technologies, reading, or
-                enjoying outdoor activities.
+                As a software developer, I thrive on the intricacies of code and the marvels of architecture, constantly pushing the boundaries of what's possible in the digital realm.
+              </p>
+              <p className="text-lg text-gray-600">
+                When I'm not immersed in pixels and lines of code, you can find me lost in the pages of captivating books or maintaining a healthy balance through workouts and a nourishing lifestyle.
+              </p>
+              <p className="text-lg text-gray-600">
+                Football matches offer a thrilling escape, but my true passion lies in capturing the essence of my travels through the lens of travel photography.
+              </p>
+              <p className="text-lg text-gray-600">
+                Beyond my personal interests, I'm dedicated to honing my leadership skills and fostering cohesive teams, driven by a relentless curiosity to discover new technologies and forge innovative pathways into the future.
               </p>
             </div>
             <div className="bg-purple-50 rounded-lg p-8">
