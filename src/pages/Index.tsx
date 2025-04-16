@@ -17,8 +17,8 @@ const Index = () => {
           <div className="flex flex-col items-center mb-6">
             <Avatar className="w-32 h-32 mb-4">
               <AvatarImage 
-                src="/placeholder.svg" 
-                alt="Your Profile" 
+                src="/lovable-uploads/568dd4dd-0beb-4769-b3eb-707cab99ce9d.png" 
+                alt="Profile Picture" 
                 className="object-cover"
               />
               <AvatarFallback>
