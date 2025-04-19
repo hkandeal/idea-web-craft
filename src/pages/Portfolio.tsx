@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Briefcase, ChevronDown, Building, Landmark, Factory, University } from "lucide-react";
+import { Briefcase, ChevronDown, Landmark } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const WorkExperience = () => {
@@ -9,6 +9,7 @@ const WorkExperience = () => {
       title: "Senior Solutions Architect",
       company: "Backbase",
       location: "UAE",
+      country: "UAE",
       period: "Feb 2024 - Present",
       description: [],
       icon: Landmark
@@ -17,6 +18,7 @@ const WorkExperience = () => {
       title: "Software Solutions Architect",
       company: "Emirates Group",
       location: "UAE",
+      country: "UAE",
       period: "Nov 2021 - Dec 2023",
       description: [
         "Designed and implemented diverse architectural solutions and ADRs for Web and Mobile business requirements.",
@@ -32,6 +34,7 @@ const WorkExperience = () => {
       title: "Digital Business Solutions Technical Architect",
       company: "Gulf Business Machines (GBM)",
       location: "UAE",
+      country: "UAE",
       period: "2015 - 2021",
       description: [
         "Architected and delivered comprehensive system designs at both strategic and implementation levels, while organizing delivery teams for maximum efficiency.",
@@ -43,12 +46,13 @@ const WorkExperience = () => {
         "Led technical implementation of enterprise solutions using IBM Case Manager, FileNet, and J2EE technologies for e-services and business process automation.",
         "Executed complex technical solutions following established architectural designs while ensuring alignment with client requirements and industry best practices."
       ],
-      icon: Factory
+      icon: Landmark
     },
     {
       title: "Enterprise Content Management Specialist / J2EE Senior Developer",
       company: "EBLA Computer Consultancy",
       location: "Qatar",
+      country: "Qatar",
       period: "2013 - 2015",
       description: [
         "Provided strategic technical leadership and hands-on mentoring to cross-functional teams, fostering collaboration and ensuring successful project delivery.",
@@ -56,18 +60,19 @@ const WorkExperience = () => {
         "Architected and implemented enterprise solutions using IBM FileNet and IBM BPM Case Manager, incorporating industry best practices to optimize business processes.",
         "Developed sophisticated J2EE applications with focus on maintainability, scalability, and adherence to enterprise coding standards."
       ],
-      icon: Building
+      icon: Landmark
     },
     {
       title: "IT Specialist - Software Engineer",
       company: "IBM Global Delivery Center",
       location: "Egypt",
+      country: "Egypt",
       period: "2010 - 2013",
       description: [
         "Engineered robust IBM FileNet and BPM Case Manager solutions, implementing best practices to optimize business processes and deliver tailored enterprise applications.",
         "Developed high-performance J2EE applications, ensuring strict adherence to coding standards and meeting complex client requirements with precision and efficiency."
       ],
-      icon: University
+      icon: Landmark
     }
   ];
 
