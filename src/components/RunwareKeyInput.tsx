@@ -4,10 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { generateLetterH } from '@/services/imageService';
 import { toast } from 'sonner';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 export const RunwareKeyInput = () => {
   const [apiKey, setApiKey] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
 
   const handleGenerate = async () => {
     if (!apiKey) {
@@ -17,12 +19,13 @@ export const RunwareKeyInput = () => {
 
     setIsLoading(true);
     try {
-      const imageUrl = await generateLetterH(apiKey);
-      // You can handle the image URL here, for example by displaying it
+      const generatedImageUrl = await generateLetterH(apiKey);
+      setImageUrl(generatedImageUrl);
       toast.success('Image generated successfully!');
-      console.log('Generated image URL:', imageUrl);
+      console.log('Generated image URL:', generatedImageUrl);
     } catch (error) {
       toast.error('Failed to generate image');
+      console.error('Error details:', error);
     } finally {
       setIsLoading(false);
     }
@@ -48,6 +51,19 @@ export const RunwareKeyInput = () => {
       >
         {isLoading ? 'Generating...' : 'Generate Letter H'}
       </Button>
+      
+      {imageUrl && (
+        <div className="mt-4">
+          <p className="text-sm font-medium mb-2">Generated Image:</p>
+          <AspectRatio ratio={1/1} className="bg-gray-100 rounded-md overflow-hidden">
+            <img 
+              src={imageUrl} 
+              alt="Generated Letter H" 
+              className="object-cover w-full h-full"
+            />
+          </AspectRatio>
+        </div>
+      )}
     </div>
   );
 };
