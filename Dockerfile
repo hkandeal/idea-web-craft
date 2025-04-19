@@ -20,6 +20,5 @@ RUN npm run build
 # Expose port 8080
 EXPOSE 8080
 
-# Start the application
-CMD ["npm", "run", "preview"]
-
+# Start the application with host set to 0.0.0.0 to make it accessible from outside the container
+CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
