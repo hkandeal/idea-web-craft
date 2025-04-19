@@ -90,7 +90,7 @@ const WorkExperience = () => {
                   <CollapsibleTrigger className="w-full p-6 flex items-start justify-between">
                     <div className="flex items-start">
                       <Avatar className="h-12 w-12 mr-4">
-                        <AvatarImage src={exp.logo} alt={`${exp.company} logo`} />
+                        <AvatarImage src="/placeholder.svg" alt={`${exp.company} logo`} />
                         <AvatarFallback className="bg-purple-100">
                           {exp.company.charAt(0)}
                         </AvatarFallback>
