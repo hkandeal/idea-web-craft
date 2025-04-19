@@ -1,5 +1,6 @@
+
 import { motion } from "framer-motion";
-import { Briefcase, ChevronDown, Building } from "lucide-react";
+import { Briefcase, ChevronDown, Building, Landmark, Factory, Bank, University } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const WorkExperience = () => {
@@ -9,7 +10,7 @@ const WorkExperience = () => {
       company: "Backbase",
       period: "Feb 2024 - Present",
       description: [],
-      logo: "/placeholder.svg"
+      icon: Bank
     },
     {
       title: "Software Solutions Architect",
@@ -23,7 +24,7 @@ const WorkExperience = () => {
         "Conducted comprehensive architecture reviews to identify system optimization opportunities.",
         "Led strategic initiatives including WMAP Openshift workloads migration to AWS EKS."
       ],
-      logo: "/placeholder.svg"
+      icon: Landmark
     },
     {
       title: "Digital Business Solutions Technical Architect",
@@ -39,7 +40,7 @@ const WorkExperience = () => {
         "Led technical implementation of enterprise solutions using IBM Case Manager, FileNet, and J2EE technologies for e-services and business process automation.",
         "Executed complex technical solutions following established architectural designs while ensuring alignment with client requirements and industry best practices."
       ],
-      logo: "/placeholder.svg"
+      icon: Factory
     },
     {
       title: "Enterprise Content Management Specialist / J2EE Senior Developer",
@@ -51,7 +52,7 @@ const WorkExperience = () => {
         "Architected and implemented enterprise solutions using IBM FileNet and IBM BPM Case Manager, incorporating industry best practices to optimize business processes.",
         "Developed sophisticated J2EE applications with focus on maintainability, scalability, and adherence to enterprise coding standards."
       ],
-      logo: "/placeholder.svg"
+      icon: Building
     },
     {
       title: "IT Specialist - Software Engineer",
@@ -61,7 +62,7 @@ const WorkExperience = () => {
         "Engineered robust IBM FileNet and BPM Case Manager solutions, implementing best practices to optimize business processes and deliver tailored enterprise applications.",
         "Developed high-performance J2EE applications, ensuring strict adherence to coding standards and meeting complex client requirements with precision and efficiency."
       ],
-      logo: "/placeholder.svg"
+      icon: University
     }
   ];
 
@@ -89,7 +90,7 @@ const WorkExperience = () => {
                   <CollapsibleTrigger className="w-full p-6 flex items-start justify-between">
                     <div className="flex items-start">
                       <div className="h-12 w-12 mr-4 flex-shrink-0 flex items-center justify-center bg-purple-100 rounded-full">
-                        <Building className="text-purple-600" size={24} />
+                        <exp.icon className="text-purple-600" size={24} />
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 text-left">{exp.title}</h3>
@@ -121,3 +122,4 @@ const WorkExperience = () => {
 };
 
 export default WorkExperience;
+
