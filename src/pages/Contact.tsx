@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { User } from "lucide-react";
 import updateMetaTags from "@/utils/metaTags";
 
 const Contact = () => {
@@ -86,20 +88,32 @@ const Contact = () => {
               </form>
             </div>
             <div className="space-y-8">
-              <div>
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Information</h2>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Mail className="text-purple-600" />
-                    <span className="text-gray-600">hossam.mousa@hotmail.com</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="text-purple-600" />
-                    <span className="text-gray-600">+971 5536 70093</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="text-purple-600" />
-                    <span className="text-gray-600">Dubai, UAE</span>
+              <div className="flex flex-col items-center space-y-6">
+                <Avatar className="w-48 h-48 mb-4">
+                  <AvatarImage 
+                    src="/lovable-uploads/568dd4dd-0beb-4769-b3eb-707cab99ce9d.png" 
+                    alt="Profile Picture" 
+                    className="object-cover"
+                  />
+                  <AvatarFallback>
+                    <User className="w-24 h-24 text-gray-400" />
+                  </AvatarFallback>
+                </Avatar>
+                <div>
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center">Contact Information</h2>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <Mail className="text-purple-600" />
+                      <span className="text-gray-600">hossam.mousa@hotmail.com</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Phone className="text-purple-600" />
+                      <span className="text-gray-600">+971 5536 70093</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <MapPin className="text-purple-600" />
+                      <span className="text-gray-600">Dubai, UAE</span>
+                    </div>
                   </div>
                 </div>
               </div>
