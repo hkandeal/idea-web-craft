@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Briefcase, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -60,8 +61,8 @@ const WorkExperience = () => {
       company: "IBM Global Delivery Center",
       period: "2010 - 2013",
       description: [
-        "Design and develop IBM FileNet and IBM BPM Case Manager solutions, leveraging industry best practices to deliver efficient and effective solutions tailored to business needs.",
-        "Development of custom J2EE applications, adept at crafting robust solutions that meet client requirements and adhere to coding standards and project specifications."
+        "Engineered robust IBM FileNet and BPM Case Manager solutions, implementing best practices to optimize business processes and deliver tailored enterprise applications.",
+        "Developed high-performance J2EE applications, ensuring strict adherence to coding standards and meeting complex client requirements with precision and efficiency."
       ]
     }
   ];
@@ -117,3 +118,4 @@ const WorkExperience = () => {
 };
 
 export default WorkExperience;
+
