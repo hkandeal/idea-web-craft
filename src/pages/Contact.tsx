@@ -1,10 +1,11 @@
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
   useEffect(() => {
-    document.title = "Contact | Hossam Mousa";
+    document.title = "Contact | Hossam Kandel";
   }, []);
 
   const [formData, setFormData] = useState({

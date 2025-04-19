@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Briefcase, ChevronDown, Landmark } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -5,7 +6,7 @@ import { useEffect } from "react";
 
 const WorkExperience = () => {
   useEffect(() => {
-    document.title = "Work Experience | Hossam Mousa";
+    document.title = "Work Experience | Hossam Kandel";
   }, []);
 
   const experiences = [

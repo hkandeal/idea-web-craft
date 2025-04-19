@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ArrowRight, User } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,7 +7,7 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Home | Hossam Mousa";
+    document.title = "Home | Hossam Kandel";
   }, []);
 
   return (

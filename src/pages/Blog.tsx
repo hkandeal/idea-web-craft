@@ -1,9 +1,10 @@
+
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 
 const Blog = () => {
   useEffect(() => {
-    document.title = "Blog | Hossam Mousa";
+    document.title = "Blog | Hossam Kandel";
   }, []);
 
   const posts = [
