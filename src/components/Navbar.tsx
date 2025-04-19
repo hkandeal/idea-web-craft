@@ -16,9 +16,9 @@ const Navbar = () => {
               <User size={20} />
               <span className="font-medium">About</span>
             </Link>
-            <Link to="/portfolio" className="flex items-center space-x-2 text-gray-900 hover:text-purple-600">
+            <Link to="/work-experience" className="flex items-center space-x-2 text-gray-900 hover:text-purple-600">
               <Briefcase size={20} />
-              <span className="font-medium">Portfolio</span>
+              <span className="font-medium">Work Experience</span>
             </Link>
             <Link to="/blog" className="flex items-center space-x-2 text-gray-900 hover:text-purple-600">
               <BookOpen size={20} />

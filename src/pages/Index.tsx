@@ -30,14 +30,14 @@ const Index = () => {
             </h1>
           </div>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-          Dive into the captivating journey of discovering who I am and where my career takes flight.Explore my work and get in touch!
+          Dive into the captivating journey of discovering who I am and where my career takes flight. Explore my work and get in touch!
           </p>
           <div className="flex justify-center gap-4">
             <Link
-              to="/portfolio"
+              to="/work-experience"
               className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
             >
-              View My Work
+              View My Experience
               <ArrowRight className="ml-2" size={20} />
             </Link>
             <Link

@@ -1,23 +1,27 @@
 
 import { motion } from "framer-motion";
+import { Briefcase } from "lucide-react";
 
-const Portfolio = () => {
-  const projects = [
+const WorkExperience = () => {
+  const experiences = [
     {
-      title: "Project 1",
-      description: "Description of project 1",
-      image: "placeholder.svg",
+      title: "Software Developer",
+      company: "Tech Innovations Inc.",
+      period: "Jan 2022 - Present",
+      description: "Leading development of cutting-edge web applications, focusing on React and modern frontend technologies. Implemented scalable solutions and mentored junior developers."
     },
     {
-      title: "Project 2",
-      description: "Description of project 2",
-      image: "placeholder.svg",
+      title: "Junior Frontend Engineer",
+      company: "Digital Solutions LLC",
+      period: "Jun 2020 - Dec 2021",
+      description: "Developed responsive web interfaces and collaborated with cross-functional teams to deliver high-quality software products."
     },
     {
-      title: "Project 3",
-      description: "Description of project 3",
-      image: "placeholder.svg",
-    },
+      title: "Web Development Intern",
+      company: "Startup Accelerator",
+      period: "Jan 2019 - May 2020",
+      description: "Gained hands-on experience in web development, working on various projects and learning best practices in software engineering."
+    }
   ];
 
   return (
@@ -28,27 +32,25 @@ const Portfolio = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">My Portfolio</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+          <h1 className="text-4xl font-bold text-gray-900 mb-8 flex items-center">
+            <Briefcase className="mr-4 text-purple-600" size={36} />
+            Work Experience
+          </h1>
+          <div className="space-y-8">
+            {experiences.map((exp, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-lg overflow-hidden"
+                className="bg-white rounded-lg shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow"
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600">{project.description}</p>
+                <div className="mb-4">
+                  <h3 className="text-xl font-semibold text-gray-900">{exp.title}</h3>
+                  <p className="text-purple-600 font-medium">{exp.company}</p>
+                  <p className="text-gray-500 text-sm">{exp.period}</p>
                 </div>
+                <p className="text-gray-600">{exp.description}</p>
               </motion.div>
             ))}
           </div>
@@ -58,4 +60,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default WorkExperience;
