@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Briefcase, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -55,6 +54,15 @@ const WorkExperience = () => {
         "Architected and implemented enterprise solutions using IBM FileNet and IBM BPM Case Manager, incorporating industry best practices to optimize business processes.",
         "Developed sophisticated J2EE applications with focus on maintainability, scalability, and adherence to enterprise coding standards."
       ]
+    },
+    {
+      title: "IT Specialist - Software Engineer",
+      company: "IBM Global Delivery Center",
+      period: "2010 - 2013",
+      description: [
+        "Design and develop IBM FileNet and IBM BPM Case Manager solutions, leveraging industry best practices to deliver efficient and effective solutions tailored to business needs.",
+        "Development of custom J2EE applications, adept at crafting robust solutions that meet client requirements and adhere to coding standards and project specifications."
+      ]
     }
   ];
 
@@ -109,4 +117,3 @@ const WorkExperience = () => {
 };
 
 export default WorkExperience;
-
