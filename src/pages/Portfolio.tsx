@@ -1,8 +1,6 @@
-
 import { motion } from "framer-motion";
-import { Briefcase, ChevronDown } from "lucide-react";
+import { Briefcase, ChevronDown, Building } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const WorkExperience = () => {
   const experiences = [
@@ -90,12 +88,9 @@ const WorkExperience = () => {
                 <Collapsible className="bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                   <CollapsibleTrigger className="w-full p-6 flex items-start justify-between">
                     <div className="flex items-start">
-                      <Avatar className="h-12 w-12 mr-4 flex-shrink-0">
-                        <AvatarImage src="/placeholder.svg" alt={`${exp.company} logo`} />
-                        <AvatarFallback className="bg-purple-100 text-purple-600 text-lg font-semibold">
-                          {exp.company.charAt(0)}
-                        </AvatarFallback>
-                      </Avatar>
+                      <div className="h-12 w-12 mr-4 flex-shrink-0 flex items-center justify-center bg-purple-100 rounded-full">
+                        <Building className="text-purple-600" size={24} />
+                      </div>
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 text-left">{exp.title}</h3>
                         <p className="text-purple-600 font-medium text-left">{exp.company}</p>
