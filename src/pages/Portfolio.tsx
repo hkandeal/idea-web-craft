@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
 
@@ -38,7 +37,10 @@ const WorkExperience = () => {
         "Provided direct technical leadership and mentoring to development teams, ensuring project success through rigorous code reviews, system demos, and architectural workshops.",
         "Led collaborative discussions with key stakeholders to bridge business requirements with technical solutions, building consensus and exploring innovative approaches.",
         "Drove pre-sales initiatives through technical demonstrations, creating proof-of-concepts, and providing expert analysis of RFP requirements.",
-        "Established and maintained strong client relationships through consistent engagement and technical excellence, ensuring long-term partnership success."
+        "Established and maintained strong client relationships through consistent engagement and technical excellence, ensuring long-term partnership success.",
+        "Spearheaded large-scale digital transformation projects for major clients including Emaar (Malls, Properties, Finance), implementing business automation and content management solutions.",
+        "Led technical implementation of enterprise solutions using IBM Case Manager, FileNet, and J2EE technologies for e-services and business process automation.",
+        "Executed complex technical solutions following established architectural designs while ensuring alignment with client requirements and industry best practices."
       ]
     },
     {
