@@ -82,8 +82,8 @@ const WorkExperience = () => {
                   <CollapsibleTrigger className="w-full p-6 flex items-start justify-between">
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 text-left">{exp.title}</h3>
-                      <p className="text-purple-600 font-medium">{exp.company}</p>
-                      <p className="text-gray-500 text-sm">{exp.period}</p>
+                      <p className="text-purple-600 font-medium text-left">{exp.company}</p>
+                      <p className="text-gray-500 text-sm text-left">{exp.period}</p>
                     </div>
                     <ChevronDown className="h-5 w-5 text-gray-500 transition-transform duration-200 collapsible-trigger" />
                   </CollapsibleTrigger>
@@ -109,3 +109,4 @@ const WorkExperience = () => {
 };
 
 export default WorkExperience;
+
