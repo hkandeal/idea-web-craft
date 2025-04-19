@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
 
@@ -15,6 +14,19 @@ const WorkExperience = () => {
       company: "Digital Solutions LLC",
       period: "Jun 2020 - Dec 2021",
       description: "Developed responsive web interfaces and collaborated with cross-functional teams to deliver high-quality software products."
+    },
+    {
+      title: "Software Solutions Architect",
+      company: "Emirates Group",
+      period: "Nov 2021 - Dec 2023",
+      description: [
+        "Designed and implemented diverse architectural solutions and ADRs for Web and Mobile business requirements.",
+        "Collaborated with enterprise architects and stakeholders to develop architecture roadmaps and technical vision for containerization initiatives.",
+        "Facilitated daily solution refinement sessions and technical design discussions with feature teams.",
+        "Contributed to enterprise API guidelines development and reviews, focusing on omni-channel service integration.",
+        "Conducted comprehensive architecture reviews to identify system optimization opportunities.",
+        "Led strategic initiatives including WMAP Openshift workloads migration to AWS EKS."
+      ]
     },
     {
       title: "Web Development Intern",
@@ -50,7 +62,15 @@ const WorkExperience = () => {
                   <p className="text-purple-600 font-medium">{exp.company}</p>
                   <p className="text-gray-500 text-sm">{exp.period}</p>
                 </div>
-                <p className="text-gray-600">{exp.description}</p>
+                {Array.isArray(exp.description) ? (
+                  <ul className="list-disc list-inside space-y-2 text-gray-600 ml-2">
+                    {exp.description.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-gray-600">{exp.description}</p>
+                )}
               </motion.div>
             ))}
           </div>
