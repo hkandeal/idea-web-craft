@@ -7,10 +7,10 @@ import updateMetaTags from "@/utils/metaTags";
 
 const About = () => {
   useEffect(() => {
-    document.title = "About Me | Hossam Kandel";
+    document.title = "About Me | Hossam Kandel Mohamed";
     updateMetaTags(
       "About Me",
-      "Learn more about my interests, passions, and what drives me forward.",
+      "Personal Website",
       "/about"
     );
   }, []);

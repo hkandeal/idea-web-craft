@@ -6,10 +6,10 @@ const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = "404 Not Found | Hossam Kandel";
+    document.title = "404 Not Found | Hossam Kandel Mohamed";
     updateMetaTags(
       "404 Not Found",
-      "The page you're looking for cannot be found.",
+      "Personal Website",
       location.pathname
     );
   }, [location.pathname]);

@@ -6,10 +6,10 @@ import updateMetaTags from "@/utils/metaTags";
 
 const Contact = () => {
   useEffect(() => {
-    document.title = "Contact | Hossam Kandel";
+    document.title = "Contact | Hossam Kandel Mohamed";
     updateMetaTags(
       "Contact",
-      "Get in touch with me. Let's connect and discuss potential opportunities.",
+      "Personal Website",
       "/contact"
     );
   }, []);

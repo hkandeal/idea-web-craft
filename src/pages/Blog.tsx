@@ -5,10 +5,10 @@ import updateMetaTags from "@/utils/metaTags";
 
 const Blog = () => {
   useEffect(() => {
-    document.title = "Blog | Hossam Kandel";
+    document.title = "Blog | Hossam Kandel Mohamed";
     updateMetaTags(
       "Blog",
-      "Explore my thoughts, insights, and experiences through my blog posts.",
+      "Personal Website",
       "/blog"
     );
   }, []);

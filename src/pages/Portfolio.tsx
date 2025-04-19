@@ -7,10 +7,10 @@ import updateMetaTags from "@/utils/metaTags";
 
 const WorkExperience = () => {
   useEffect(() => {
-    document.title = "Work Experience | Hossam Kandel";
+    document.title = "Work Experience | Hossam Kandel Mohamed";
     updateMetaTags(
       "Work Experience",
-      "Explore my professional journey and career achievements in software development and architecture.",
+      "Personal Website",
       "/work-experience"
     );
   }, []);
