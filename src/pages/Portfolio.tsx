@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Briefcase, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -6,16 +5,10 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 const WorkExperience = () => {
   const experiences = [
     {
-      title: "Software Developer",
-      company: "Tech Innovations Inc.",
-      period: "Jan 2022 - Present",
-      description: "Leading development of cutting-edge web applications, focusing on React and modern frontend technologies. Implemented scalable solutions and mentored junior developers."
-    },
-    {
-      title: "Junior Frontend Engineer",
-      company: "Digital Solutions LLC",
-      period: "Jun 2020 - Dec 2021",
-      description: "Developed responsive web interfaces and collaborated with cross-functional teams to deliver high-quality software products."
+      title: "Senior Solutions Architect",
+      company: "Backbase",
+      period: "Feb 2024 - Present",
+      description: []
     },
     {
       title: "Software Solutions Architect",
@@ -118,4 +111,3 @@ const WorkExperience = () => {
 };
 
 export default WorkExperience;
-
