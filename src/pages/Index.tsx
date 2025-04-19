@@ -1,10 +1,14 @@
-
 import { motion } from "framer-motion";
 import { ArrowRight, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "Home | Hossam Mousa";
+  }, []);
+
   return (
     <div className="min-h-screen pt-16 bg-gradient-to-br from-white to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

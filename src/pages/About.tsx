@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plane, Camera, Book, Dumbbell } from "lucide-react";
+import { useEffect } from "react";
 
 const About = () => {
+  useEffect(() => {
+    document.title = "About Me | Hossam Mousa";
+  }, []);
+
   const interests = [
     {
       title: "Traveling",
