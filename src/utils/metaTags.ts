@@ -31,6 +31,24 @@ const updateMetaTags = (
   }
   metaOgUrl.setAttribute('content', `https://hossam.io${path}`);
 
+  // Update Open Graph image
+  let metaOgImage = document.querySelector('meta[property="og:image"]');
+  if (!metaOgImage) {
+    metaOgImage = document.createElement('meta');
+    metaOgImage.setAttribute('property', 'og:image');
+    document.head.appendChild(metaOgImage);
+  }
+  metaOgImage.setAttribute('content', 'https://hossam.io/lovable-uploads/568dd4dd-0beb-4769-b3eb-707cab99ce9d.png');
+
+  // Update Twitter image
+  let metaTwitterImage = document.querySelector('meta[name="twitter:image"]');
+  if (!metaTwitterImage) {
+    metaTwitterImage = document.createElement('meta');
+    metaTwitterImage.setAttribute('name', 'twitter:image');
+    document.head.appendChild(metaTwitterImage);
+  }
+  metaTwitterImage.setAttribute('content', 'https://hossam.io/lovable-uploads/568dd4dd-0beb-4769-b3eb-707cab99ce9d.png');
+
   // Set static Open Graph tags if they don't exist
   if (!document.querySelector('meta[property="og:type"]')) {
     const metaOgType = document.createElement('meta');
@@ -39,13 +57,21 @@ const updateMetaTags = (
     document.head.appendChild(metaOgType);
   }
 
-  if (!document.querySelector('meta[property="og:image"]')) {
-    const metaOgImage = document.createElement('meta');
-    metaOgImage.setAttribute('property', 'og:image');
-    metaOgImage.setAttribute('content', '/lovable-uploads/568dd4dd-0beb-4769-b3eb-707cab99ce9d.png');
-    document.head.appendChild(metaOgImage);
+  // Set Twitter card if it doesn't exist
+  if (!document.querySelector('meta[name="twitter:card"]')) {
+    const metaTwitterCard = document.createElement('meta');
+    metaTwitterCard.setAttribute('name', 'twitter:card');
+    metaTwitterCard.setAttribute('content', 'summary_large_image');
+    document.head.appendChild(metaTwitterCard);
+  }
+
+  // Set Twitter site if it doesn't exist
+  if (!document.querySelector('meta[name="twitter:site"]')) {
+    const metaTwitterSite = document.createElement('meta');
+    metaTwitterSite.setAttribute('name', 'twitter:site');
+    metaTwitterSite.setAttribute('content', '@hossamkandel');
+    document.head.appendChild(metaTwitterSite);
   }
 };
 
 export default updateMetaTags;
-
