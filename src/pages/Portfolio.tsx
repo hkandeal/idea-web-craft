@@ -42,12 +42,6 @@ const WorkExperience = () => {
         "Led technical implementation of enterprise solutions using IBM Case Manager, FileNet, and J2EE technologies for e-services and business process automation.",
         "Executed complex technical solutions following established architectural designs while ensuring alignment with client requirements and industry best practices."
       ]
-    },
-    {
-      title: "Web Development Intern",
-      company: "Startup Accelerator",
-      period: "Jan 2019 - May 2020",
-      description: "Gained hands-on experience in web development, working on various projects and learning best practices in software engineering."
     }
   ];
 
