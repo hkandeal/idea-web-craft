@@ -38,27 +38,33 @@ const Blog = () => {
               transition={{ duration: 0.5 }}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
-              <AspectRatio ratio={16 / 9} className="bg-muted">
-                <img
-                  src={post.thumbnail}
-                  alt={post.title}
-                  className="object-cover w-full h-full"
-                />
-              </AspectRatio>
               <div className="p-6">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-                  {post.title}
-                </h2>
-                <p className="text-sm text-gray-500 mb-4">{post.date}</p>
-                <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                <a 
-                  href={post.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="mt-4 text-purple-600 hover:text-purple-700 font-medium"
-                >
-                  Read More →
-                </a>
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="flex-grow">
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+                      {post.title}
+                    </h2>
+                    <p className="text-sm text-gray-500 mb-4">{post.date}</p>
+                    <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                    <a 
+                      href={post.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="mt-4 text-purple-600 hover:text-purple-700 font-medium"
+                    >
+                      Read More →
+                    </a>
+                  </div>
+                  <div className="md:w-64 flex-shrink-0">
+                    <AspectRatio ratio={16 / 9} className="bg-muted rounded-lg overflow-hidden">
+                      <img
+                        src={post.thumbnail}
+                        alt={post.title}
+                        className="object-cover w-full h-full"
+                      />
+                    </AspectRatio>
+                  </div>
+                </div>
               </div>
             </motion.article>
           </div>
