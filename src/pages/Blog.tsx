@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import updateMetaTags from "@/utils/metaTags";
@@ -13,9 +14,10 @@ const Blog = () => {
   }, []);
 
   const post = {
-    title: "First Blog Post",
-    excerpt: "This is a brief excerpt from the first blog post...",
+    title: "Software Architecture — Things That No One Has Told You",
+    excerpt: "My first "official" architecture role was a learning experience — in the truest sense of that expression. I started learning what to do and what not to do. This led me to many conversations with other architects, developers, business stakeholders, and others about their expectation from this role.",
     date: "April 16, 2025",
+    link: "https://levelup.gitconnected.com/software-architecture-things-that-no-one-has-told-you-c098bbb70a61"
   };
 
   return (
@@ -38,10 +40,15 @@ const Blog = () => {
                 {post.title}
               </h2>
               <p className="text-sm text-gray-500 mb-4">{post.date}</p>
-              <p className="text-gray-600">{post.excerpt}</p>
-              <button className="mt-4 text-purple-600 hover:text-purple-700 font-medium">
+              <p className="text-gray-600 mb-4">{post.excerpt}</p>
+              <a 
+                href={post.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="mt-4 text-purple-600 hover:text-purple-700 font-medium"
+              >
                 Read More →
-              </button>
+              </a>
             </motion.article>
           </div>
         </motion.div>
@@ -51,3 +58,4 @@ const Blog = () => {
 };
 
 export default Blog;
+
