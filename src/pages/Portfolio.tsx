@@ -42,6 +42,17 @@ const WorkExperience = () => {
         "Led technical implementation of enterprise solutions using IBM Case Manager, FileNet, and J2EE technologies for e-services and business process automation.",
         "Executed complex technical solutions following established architectural designs while ensuring alignment with client requirements and industry best practices."
       ]
+    },
+    {
+      title: "Enterprise Content Management Specialist / J2EE Senior Developer",
+      company: "EBLA Computer Consultancy",
+      period: "2013 - 2015",
+      description: [
+        "Provided strategic technical leadership and hands-on mentoring to cross-functional teams, fostering collaboration and ensuring successful project delivery.",
+        "Created detailed technical designs at both architectural and implementation levels, establishing comprehensive specifications aligned with business objectives.",
+        "Architected and implemented enterprise solutions using IBM FileNet and IBM BPM Case Manager, incorporating industry best practices to optimize business processes.",
+        "Developed sophisticated J2EE applications with focus on maintainability, scalability, and adherence to enterprise coding standards."
+      ]
     }
   ];
 
