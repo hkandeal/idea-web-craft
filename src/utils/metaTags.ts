@@ -11,7 +11,7 @@ const updateMetaTags = (
     metaOgTitle.setAttribute('property', 'og:title');
     document.head.appendChild(metaOgTitle);
   }
-  metaOgTitle.setAttribute('content', `${title} | Hossam Kandel`);
+  metaOgTitle.setAttribute('content', `${title} | Hossam Kandel Mohamed`);
 
   // Update Open Graph description
   let metaOgDesc = document.querySelector('meta[property="og:description"]');
@@ -20,7 +20,7 @@ const updateMetaTags = (
     metaOgDesc.setAttribute('property', 'og:description');
     document.head.appendChild(metaOgDesc);
   }
-  metaOgDesc.setAttribute('content', description);
+  metaOgDesc.setAttribute('content', description || 'Personal Website');
 
   // Update Open Graph URL
   let metaOgUrl = document.querySelector('meta[property="og:url"]');
@@ -42,9 +42,10 @@ const updateMetaTags = (
   if (!document.querySelector('meta[property="og:image"]')) {
     const metaOgImage = document.createElement('meta');
     metaOgImage.setAttribute('property', 'og:image');
-    metaOgImage.setAttribute('content', 'https://hossam.io/public/res/info.png');
+    metaOgImage.setAttribute('content', '/lovable-uploads/568dd4dd-0beb-4769-b3eb-707cab99ce9d.png');
     document.head.appendChild(metaOgImage);
   }
 };
 
 export default updateMetaTags;
+
