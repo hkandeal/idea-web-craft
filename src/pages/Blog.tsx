@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import updateMetaTags from "@/utils/metaTags";
@@ -15,7 +14,7 @@ const Blog = () => {
 
   const post = {
     title: "Software Architecture — Things That No One Has Told You",
-    excerpt: "My first "official" architecture role was a learning experience — in the truest sense of that expression. I started learning what to do and what not to do. This led me to many conversations with other architects, developers, business stakeholders, and others about their expectation from this role.",
+    excerpt: 'My first "official" architecture role was a learning experience — in the truest sense of that expression. I started learning what to do and what not to do. This led me to many conversations with other architects, developers, business stakeholders, and others about their expectation from this role.',
     date: "April 16, 2025",
     link: "https://levelup.gitconnected.com/software-architecture-things-that-no-one-has-told-you-c098bbb70a61"
   };
@@ -58,4 +57,3 @@ const Blog = () => {
 };
 
 export default Blog;
-
