@@ -1,10 +1,10 @@
+
 import { motion } from "framer-motion";
 import { ArrowRight, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useEffect } from "react";
 import updateMetaTags from "@/utils/metaTags";
-import { RunwareKeyInput } from "@/components/RunwareKeyInput";
 
 const Index = () => {
   useEffect(() => {
@@ -57,9 +57,6 @@ const Index = () => {
             >
               Get in Touch
             </Link>
-          </div>
-          <div className="mt-12">
-            <RunwareKeyInput />
           </div>
         </motion.div>
       </div>
