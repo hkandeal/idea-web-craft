@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Briefcase, ChevronDown, Building, Landmark, Factory, University } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -7,6 +8,7 @@ const WorkExperience = () => {
     {
       title: "Senior Solutions Architect",
       company: "Backbase",
+      location: "UAE",
       period: "Feb 2024 - Present",
       description: [],
       icon: Landmark
@@ -14,6 +16,7 @@ const WorkExperience = () => {
     {
       title: "Software Solutions Architect",
       company: "Emirates Group",
+      location: "UAE",
       period: "Nov 2021 - Dec 2023",
       description: [
         "Designed and implemented diverse architectural solutions and ADRs for Web and Mobile business requirements.",
@@ -28,6 +31,7 @@ const WorkExperience = () => {
     {
       title: "Digital Business Solutions Technical Architect",
       company: "Gulf Business Machines (GBM)",
+      location: "UAE",
       period: "2015 - 2021",
       description: [
         "Architected and delivered comprehensive system designs at both strategic and implementation levels, while organizing delivery teams for maximum efficiency.",
@@ -44,6 +48,7 @@ const WorkExperience = () => {
     {
       title: "Enterprise Content Management Specialist / J2EE Senior Developer",
       company: "EBLA Computer Consultancy",
+      location: "Qatar",
       period: "2013 - 2015",
       description: [
         "Provided strategic technical leadership and hands-on mentoring to cross-functional teams, fostering collaboration and ensuring successful project delivery.",
@@ -56,6 +61,7 @@ const WorkExperience = () => {
     {
       title: "IT Specialist - Software Engineer",
       company: "IBM Global Delivery Center",
+      location: "Egypt",
       period: "2010 - 2013",
       description: [
         "Engineered robust IBM FileNet and BPM Case Manager solutions, implementing best practices to optimize business processes and deliver tailored enterprise applications.",
@@ -94,7 +100,7 @@ const WorkExperience = () => {
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 text-left">{exp.title}</h3>
                         <p className="text-purple-600 font-medium text-left">{exp.company}</p>
-                        <p className="text-gray-500 text-sm text-left">{exp.period}</p>
+                        <p className="text-gray-500 text-sm text-left">{exp.location} • {exp.period}</p>
                       </div>
                     </div>
                     <ChevronDown className="h-5 w-5 text-gray-500 transition-transform duration-200 collapsible-trigger" />
