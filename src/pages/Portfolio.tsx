@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Briefcase, ChevronDown } from "lucide-react";
+import { Briefcase, ChevronDown, Building, Factory, Landmark } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const WorkExperience = () => {
   const experiences = [
@@ -8,7 +9,8 @@ const WorkExperience = () => {
       title: "Senior Solutions Architect",
       company: "Backbase",
       period: "Feb 2024 - Present",
-      description: []
+      description: [],
+      icon: Building
     },
     {
       title: "Software Solutions Architect",
@@ -21,7 +23,8 @@ const WorkExperience = () => {
         "Contributed to enterprise API guidelines development and reviews, focusing on omni-channel service integration.",
         "Conducted comprehensive architecture reviews to identify system optimization opportunities.",
         "Led strategic initiatives including WMAP Openshift workloads migration to AWS EKS."
-      ]
+      ],
+      icon: Landmark
     },
     {
       title: "Digital Business Solutions Technical Architect",
@@ -36,7 +39,8 @@ const WorkExperience = () => {
         "Spearheaded large-scale digital transformation projects for major clients including Emaar (Malls, Properties, Finance), implementing business automation and content management solutions.",
         "Led technical implementation of enterprise solutions using IBM Case Manager, FileNet, and J2EE technologies for e-services and business process automation.",
         "Executed complex technical solutions following established architectural designs while ensuring alignment with client requirements and industry best practices."
-      ]
+      ],
+      icon: Factory
     },
     {
       title: "Enterprise Content Management Specialist / J2EE Senior Developer",
@@ -47,7 +51,8 @@ const WorkExperience = () => {
         "Created detailed technical designs at both architectural and implementation levels, establishing comprehensive specifications aligned with business objectives.",
         "Architected and implemented enterprise solutions using IBM FileNet and IBM BPM Case Manager, incorporating industry best practices to optimize business processes.",
         "Developed sophisticated J2EE applications with focus on maintainability, scalability, and adherence to enterprise coding standards."
-      ]
+      ],
+      icon: Building
     },
     {
       title: "IT Specialist - Software Engineer",
@@ -56,7 +61,8 @@ const WorkExperience = () => {
       description: [
         "Engineered robust IBM FileNet and BPM Case Manager solutions, implementing best practices to optimize business processes and deliver tailored enterprise applications.",
         "Developed high-performance J2EE applications, ensuring strict adherence to coding standards and meeting complex client requirements with precision and efficiency."
-      ]
+      ],
+      icon: Building
     }
   ];
 
@@ -82,10 +88,17 @@ const WorkExperience = () => {
               >
                 <Collapsible className="bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                   <CollapsibleTrigger className="w-full p-6 flex items-start justify-between">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 text-left">{exp.title}</h3>
-                      <p className="text-purple-600 font-medium text-left">{exp.company}</p>
-                      <p className="text-gray-500 text-sm text-left">{exp.period}</p>
+                    <div className="flex items-start">
+                      <Avatar className="h-12 w-12 mr-4 bg-purple-100">
+                        <AvatarFallback className="bg-purple-100">
+                          <exp.icon className="h-6 w-6 text-purple-600" />
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-900 text-left">{exp.title}</h3>
+                        <p className="text-purple-600 font-medium text-left">{exp.company}</p>
+                        <p className="text-gray-500 text-sm text-left">{exp.period}</p>
+                      </div>
                     </div>
                     <ChevronDown className="h-5 w-5 text-gray-500 transition-transform duration-200 collapsible-trigger" />
                   </CollapsibleTrigger>
