@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plane, Camera, Book, Dumbbell } from "lucide-react";
@@ -22,7 +23,7 @@ const About = () => {
     {
       title: "Workout",
       icon: <Dumbbell className="w-6 h-6 text-purple-600" />,
-      description: "Maintaining a healthy lifestyle is important to me. I enjoy staying active through various workouts and fitness activities. Whether it's hitting the gym, going for a run, or practicing yoga, I prioritize my physical well-being."
+      description: "Maintaining a healthy lifestyle is important to me. I enjoy staying active through various workouts and fitness activities. Whether it's hitting the gym or going for a run, I prioritize my physical well-being."
     }
   ];
 
