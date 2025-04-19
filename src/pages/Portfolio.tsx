@@ -1,6 +1,5 @@
-
 import { motion } from "framer-motion";
-import { Briefcase, ChevronDown, Building, Landmark, Factory, Bank, University } from "lucide-react";
+import { Briefcase, ChevronDown, Building, Landmark, Factory, University } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const WorkExperience = () => {
@@ -10,7 +9,7 @@ const WorkExperience = () => {
       company: "Backbase",
       period: "Feb 2024 - Present",
       description: [],
-      icon: Bank
+      icon: Landmark
     },
     {
       title: "Software Solutions Architect",
@@ -122,4 +121,3 @@ const WorkExperience = () => {
 };
 
 export default WorkExperience;
-
