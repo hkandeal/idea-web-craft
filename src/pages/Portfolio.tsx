@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
 
@@ -26,6 +27,18 @@ const WorkExperience = () => {
         "Contributed to enterprise API guidelines development and reviews, focusing on omni-channel service integration.",
         "Conducted comprehensive architecture reviews to identify system optimization opportunities.",
         "Led strategic initiatives including WMAP Openshift workloads migration to AWS EKS."
+      ]
+    },
+    {
+      title: "Digital Business Solutions Technical Architect",
+      company: "Gulf Business Machines (GBM)",
+      period: "2015 - 2021",
+      description: [
+        "Architected and delivered comprehensive system designs at both strategic and implementation levels, while organizing delivery teams for maximum efficiency.",
+        "Provided direct technical leadership and mentoring to development teams, ensuring project success through rigorous code reviews, system demos, and architectural workshops.",
+        "Led collaborative discussions with key stakeholders to bridge business requirements with technical solutions, building consensus and exploring innovative approaches.",
+        "Drove pre-sales initiatives through technical demonstrations, creating proof-of-concepts, and providing expert analysis of RFP requirements.",
+        "Established and maintained strong client relationships through consistent engagement and technical excellence, ensuring long-term partnership success."
       ]
     },
     {
