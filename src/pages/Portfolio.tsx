@@ -3,10 +3,16 @@ import { motion } from "framer-motion";
 import { Briefcase, ChevronDown, Landmark } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useEffect } from "react";
+import updateMetaTags from "@/utils/metaTags";
 
 const WorkExperience = () => {
   useEffect(() => {
     document.title = "Work Experience | Hossam Kandel";
+    updateMetaTags(
+      "Work Experience",
+      "Explore my professional journey and career achievements in software development and architecture.",
+      "/work-experience"
+    );
   }, []);
 
   const experiences = [

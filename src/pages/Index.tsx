@@ -4,10 +4,16 @@ import { ArrowRight, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useEffect } from "react";
+import updateMetaTags from "@/utils/metaTags";
 
 const Index = () => {
   useEffect(() => {
     document.title = "Home | Hossam Kandel";
+    updateMetaTags(
+      "Home",
+      "Welcome to my personal website. Dive into my journey, work, and experiences.",
+      "/"
+    );
   }, []);
 
   return (

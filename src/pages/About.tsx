@@ -3,10 +3,16 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plane, Camera, Book, Dumbbell } from "lucide-react";
 import { useEffect } from "react";
+import updateMetaTags from "@/utils/metaTags";
 
 const About = () => {
   useEffect(() => {
     document.title = "About Me | Hossam Kandel";
+    updateMetaTags(
+      "About Me",
+      "Learn more about my interests, passions, and what drives me forward.",
+      "/about"
+    );
   }, []);
 
   const interests = [

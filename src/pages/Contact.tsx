@@ -2,10 +2,16 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
+import updateMetaTags from "@/utils/metaTags";
 
 const Contact = () => {
   useEffect(() => {
     document.title = "Contact | Hossam Kandel";
+    updateMetaTags(
+      "Contact",
+      "Get in touch with me. Let's connect and discuss potential opportunities.",
+      "/contact"
+    );
   }, []);
 
   const [formData, setFormData] = useState({

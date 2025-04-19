@@ -1,10 +1,16 @@
 
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import updateMetaTags from "@/utils/metaTags";
 
 const Blog = () => {
   useEffect(() => {
     document.title = "Blog | Hossam Kandel";
+    updateMetaTags(
+      "Blog",
+      "Explore my thoughts, insights, and experiences through my blog posts.",
+      "/blog"
+    );
   }, []);
 
   const posts = [

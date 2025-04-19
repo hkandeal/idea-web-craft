@@ -1,13 +1,18 @@
-
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import updateMetaTags from "@/utils/metaTags";
 
 const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
     document.title = "404 Not Found | Hossam Kandel";
-  }, []);
+    updateMetaTags(
+      "404 Not Found",
+      "The page you're looking for cannot be found.",
+      location.pathname
+    );
+  }, [location.pathname]);
 
   useEffect(() => {
     console.error(
