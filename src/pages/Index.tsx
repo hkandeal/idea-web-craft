@@ -26,14 +26,14 @@ const Index = () => {
           className="text-center"
         >
           <div className="flex flex-col items-center mb-6">
-            <Avatar className="w-32 h-32 mb-4">
+            <Avatar className="w-48 h-48 mb-4">
               <AvatarImage 
-                src="https://hossam.io/lovable-uploads/568dd4dd-0beb-4769-b3eb-707cab99ce9d.png" 
+                src="/lovable-uploads/2ee19d8d-e73b-49ac-ad56-443ddd758647.png" 
                 alt="Profile Picture" 
                 className="object-cover"
               />
               <AvatarFallback>
-                <User className="w-16 h-16 text-gray-400" />
+                <User className="w-24 h-24 text-gray-400" />
               </AvatarFallback>
             </Avatar>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
