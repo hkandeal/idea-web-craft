@@ -1,12 +1,13 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Airplane, Camera, Book, Dumbbell } from "lucide-react";
+import { Plane, Camera, Book, Dumbbell } from "lucide-react";
 
 const About = () => {
   const interests = [
     {
       title: "Traveling",
-      icon: <Airplane className="w-6 h-6 text-purple-600" />,
+      icon: <Plane className="w-6 h-6 text-purple-600" />,
       description: "Exploring new places and experiencing different cultures"
     },
     {
