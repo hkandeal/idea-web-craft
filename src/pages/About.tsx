@@ -17,7 +17,7 @@ const About = () => {
     {
       title: "History & Reading",
       icon: <Book className="w-6 h-6 text-purple-600" />,
-      description: "Books are my constant companions on this journey called life. Whether it's fiction, non-fiction, or historical accounts, I'm always eager to dive into a good book and explore new worlds through literature."
+      description: "My passion for reading spans historical narratives of ancient nations and epic battles, alongside inspiring biographies and transformative self-development books. Each page is a journey through time, wisdom, and human experience."
     },
     {
       title: "Workout",
