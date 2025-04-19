@@ -72,18 +72,18 @@ const WorkExperience = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-screen pt-16 bg-gradient-to-b from-white to-purple-50">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-8 flex items-center">
+          <h1 className="text-4xl font-bold text-gray-900 mb-12 flex items-center">
             <Briefcase className="mr-4 text-purple-600" size={36} />
             Work Experience
           </h1>
-          <div className="space-y-4">
+          <div className="space-y-6">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -91,29 +91,33 @@ const WorkExperience = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Collapsible className="bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                <Collapsible className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100">
                   <CollapsibleTrigger className="w-full p-6 flex items-start justify-between">
-                    <div className="flex items-start">
-                      <div className="h-12 w-12 mr-4 flex-shrink-0 flex items-center justify-center bg-purple-100 rounded-full">
-                        <exp.icon className="text-purple-600" size={24} />
+                    <div className="flex items-start space-x-6">
+                      <div className="h-14 w-14 flex-shrink-0 flex items-center justify-center bg-purple-100 rounded-xl">
+                        <exp.icon className="text-purple-600" size={28} />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-gray-900 text-left">{exp.title}</h3>
-                        <p className="text-purple-600 font-medium text-left">{exp.company}</p>
-                        <p className="text-gray-500 text-sm text-left">{exp.location} • {exp.period}</p>
+                        <h3 className="text-xl font-semibold text-gray-900 text-left mb-2">{exp.title}</h3>
+                        <p className="text-purple-600 font-medium text-left text-lg mb-1">{exp.company}</p>
+                        <p className="text-gray-500 text-sm text-left flex items-center space-x-2">
+                          <span>{exp.location}</span>
+                          <span>•</span>
+                          <span>{exp.period}</span>
+                        </p>
                       </div>
                     </div>
-                    <ChevronDown className="h-5 w-5 text-gray-500 transition-transform duration-200 collapsible-trigger" />
+                    <ChevronDown className="h-6 w-6 text-purple-400 transition-transform duration-200 collapsible-trigger" />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="px-6 pb-6">
                     {Array.isArray(exp.description) ? (
-                      <ul className="list-disc list-inside space-y-2 text-gray-600 ml-2">
+                      <div className="space-y-3 text-gray-600 ml-20">
                         {exp.description.map((item, i) => (
-                          <li key={i}>{item}</li>
+                          <p key={i} className="leading-relaxed">{item}</p>
                         ))}
-                      </ul>
+                      </div>
                     ) : (
-                      <p className="text-gray-600">{exp.description}</p>
+                      <p className="text-gray-600 ml-20">{exp.description}</p>
                     )}
                   </CollapsibleContent>
                 </Collapsible>
