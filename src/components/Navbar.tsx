@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Home, User, Mail, Briefcase, BookOpen } from "lucide-react";
+import { Heading, User, Mail, Briefcase, BookOpen } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex space-x-8 items-center">
             <Link to="/" className="flex items-center space-x-2 text-gray-900 hover:text-purple-600">
-              <Home size={20} />
+              <Heading size={20} />
               <span className="font-medium">Home</span>
             </Link>
             <Link to="/about" className="flex items-center space-x-2 text-gray-900 hover:text-purple-600">
