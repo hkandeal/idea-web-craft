@@ -1,5 +1,7 @@
+
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
+import { Briefcase, ChevronDown } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const WorkExperience = () => {
   const experiences = [
@@ -68,29 +70,35 @@ const WorkExperience = () => {
             <Briefcase className="mr-4 text-purple-600" size={36} />
             Work Experience
           </h1>
-          <div className="space-y-8">
+          <div className="space-y-4">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow"
               >
-                <div className="mb-4">
-                  <h3 className="text-xl font-semibold text-gray-900">{exp.title}</h3>
-                  <p className="text-purple-600 font-medium">{exp.company}</p>
-                  <p className="text-gray-500 text-sm">{exp.period}</p>
-                </div>
-                {Array.isArray(exp.description) ? (
-                  <ul className="list-disc list-inside space-y-2 text-gray-600 ml-2">
-                    {exp.description.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-gray-600">{exp.description}</p>
-                )}
+                <Collapsible className="bg-white rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
+                  <CollapsibleTrigger className="w-full p-6 flex items-start justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 text-left">{exp.title}</h3>
+                      <p className="text-purple-600 font-medium">{exp.company}</p>
+                      <p className="text-gray-500 text-sm">{exp.period}</p>
+                    </div>
+                    <ChevronDown className="h-5 w-5 text-gray-500 transition-transform duration-200 collapsible-trigger" />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="px-6 pb-6">
+                    {Array.isArray(exp.description) ? (
+                      <ul className="list-disc list-inside space-y-2 text-gray-600 ml-2">
+                        {exp.description.map((item, i) => (
+                          <li key={i}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-gray-600">{exp.description}</p>
+                    )}
+                  </CollapsibleContent>
+                </Collapsible>
               </motion.div>
             ))}
           </div>
