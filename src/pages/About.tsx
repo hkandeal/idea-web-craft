@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plane, Camera, Book, Dumbbell } from "lucide-react";
@@ -8,22 +7,22 @@ const About = () => {
     {
       title: "Traveling",
       icon: <Plane className="w-6 h-6 text-purple-600" />,
-      description: "Exploring new places and experiencing different cultures"
+      description: "Traveling is my ultimate passion. Exploring new destinations, immersing myself in different cultures, and meeting people from all walks of life fuel my sense of adventure and curiosity."
     },
     {
       title: "Photography",
       icon: <Camera className="w-6 h-6 text-purple-600" />,
-      description: "Capturing moments and telling stories through images"
+      description: "Capturing moments through photography is my way of preserving memories and sharing the beauty of the world with others. From landscapes to portraits, I'm constantly honing my skills behind the lens."
     },
     {
       title: "History & Reading",
       icon: <Book className="w-6 h-6 text-purple-600" />,
-      description: "Delving into ancient histories and expanding knowledge through books"
+      description: "Books are my constant companions on this journey called life. Whether it's fiction, non-fiction, or historical accounts, I'm always eager to dive into a good book and explore new worlds through literature."
     },
     {
       title: "Workout",
       icon: <Dumbbell className="w-6 h-6 text-purple-600" />,
-      description: "Maintaining a healthy lifestyle through regular exercise"
+      description: "Maintaining a healthy lifestyle is important to me. I enjoy staying active through various workouts and fitness activities. Whether it's hitting the gym, going for a run, or practicing yoga, I prioritize my physical well-being."
     }
   ];
 
@@ -58,7 +57,7 @@ const About = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
               {interests.map((interest, index) => (
                 <Card key={index} className="transform transition-all hover:scale-105">
                   <CardHeader className="space-y-1 flex items-center justify-center pb-4">
@@ -68,7 +67,7 @@ const About = () => {
                     <CardTitle className="text-xl text-center">{interest.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 text-center">{interest.description}</p>
+                    <p className="text-gray-600 text-center leading-relaxed">{interest.description}</p>
                   </CardContent>
                 </Card>
               ))}
