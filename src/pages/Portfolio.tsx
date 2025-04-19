@@ -111,11 +111,11 @@ const WorkExperience = () => {
                   </CollapsibleTrigger>
                   <CollapsibleContent className="px-6 pb-6">
                     {Array.isArray(exp.description) ? (
-                      <div className="space-y-3 text-gray-600 ml-20">
+                      <ul className="list-disc space-y-3 text-gray-600 ml-24 leading-relaxed">
                         {exp.description.map((item, i) => (
-                          <p key={i} className="leading-relaxed">{item}</p>
+                          <li key={i} className="pl-2">{item}</li>
                         ))}
-                      </div>
+                      </ul>
                     ) : (
                       <p className="text-gray-600 ml-20">{exp.description}</p>
                     )}
