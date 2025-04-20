@@ -1,0 +1,105 @@
+name: app docker build workflow
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+env:
+  GITHUB_SHA: ${{ github.sha }}
+  REGISTRY_HOSTNAME: docker.io
+  DOCKER_USERNAME: hossamgbm
+  IMAGE_NAME: personal-website-app
+  PORT: 80
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Read environment variables from .env file
+        id: dotenv
+        uses: falti/dotenv-action@v1.1.2
+        with:
+          log-variables: true
+
+      - name: Use the php version environment variable
+        run: echo "${{ steps.dotenv.outputs.PHP_VERSION }}"
+
+      - name: Generate build number
+        uses: einaregilsson/build-number@v3
+        with:
+          token: ${{secrets.API_TOKEN_GITHUB}}
+
+      - name: Print new build number
+        run: echo "Build number is $BUILD_NUMBER"
+
+      - name: Starting Build & Push  Status Slack Notification
+        uses: ravsamhq/notify-slack-action@v2
+        if: always()
+        with:
+          status: ${{ job.status }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          notification_title: "Starting Build {BUILD_NUMBER}"
+          message_format: "{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>"
+          footer: "Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>"
+          notify_when: "failure, success, warning"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.GITOPS_SLACK_API }}
+
+      - name: Build docker image
+        run: |
+          docker images
+          docker build -t $IMAGE_NAME:$BUILD_NUMBER --build-arg PHP_VERSION=${{ steps.dotenv.outputs.PHP_VERSION }} .
+          docker images
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{secrets.DOCKERHUB_USERNAME}}
+          password: ${{secrets.DOCKERHUB_PASSWORD}}
+
+      - name: Push the image to Dockerhub
+        run: |
+          docker image tag $IMAGE_NAME:$BUILD_NUMBER docker.io/$DOCKER_USERNAME/$IMAGE_NAME:$BUILD_NUMBER
+          docker image push docker.io/$DOCKER_USERNAME/$IMAGE_NAME:$BUILD_NUMBER
+
+      - name: BuiDocker Build & Push  Status Slack Notification
+        uses: ravsamhq/notify-slack-action@v2
+        if: always()
+        with:
+          status: ${{ job.status }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          notification_title: "Docker Build & Push Status: {status_message}"
+          message_format: "{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>"
+          footer: "Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>"
+          notify_when: "failure, success, warning"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.GITOPS_SLACK_API }}
+
+      - name: Invoke mysite Infra GitOps pipe
+        run: |
+          curl -H "Accept: application/vnd.github.v3+json" \
+          -H "Authorization: token ${{secrets.API_TOKEN_GITHUB }}" \
+          -H "Content-Type: application/json" \
+          --request POST \
+          --data '{"event_type": "app-update-service-build-number", "client_payload": { "buildnumber": "'"$BUILD_NUMBER"'" }}' \
+          https://api.github.com/repos/hkandeal/linode-mysiteapp/dispatches
+
+      - name: Invoked Infra Workflow Slack Notification
+        uses: ravsamhq/notify-slack-action@v2
+        if: always()
+        with:
+          status: ${{ job.status }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          notification_title: "Infra Workflow trigger Status: {status_message}"
+          message_format: "{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>"
+          footer: "Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>"
+          notify_when: "failure, success, warning"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.GITOPS_SLACK_API }}
