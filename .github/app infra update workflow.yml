@@ -1,0 +1,31 @@
+name: app infra update K8s manifest workflow
+
+# Controls when the workflow will run
+on:
+  repository_dispatch:
+    types: app-update-service-build-number
+
+permissions:
+  contents: write
+  
+jobs:
+  DevDeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      # Runs a set of commands using the runners shell
+      - name: Update the Build number
+        run: |
+          echo "Updating the Build Number: ${{github.event.client_payload.buildnumber}}"
+
+      - name: Update Image Version in the yaml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: '.k8s/deployment-manifests/mysite-service-deployment.yaml'
+          propertyPath: 'spec.template.spec.containers[0].image'
+          value: 'hossamgbm/personal-website-app:${{ github.event.client_payload.buildnumber}}'
+          masterBranchName: 'main'
+          branch: 'main'
+          message: 'Update Image Version to hossamgbm/personal-website-app:${{ github.event.client_payload.buildnumber }}' 
