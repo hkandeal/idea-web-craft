@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: personal-website-app-svc
+  namespace: personal-website
+  labels:
+    application: personal-website-app
+spec:
+  type: ClusterIP
+  selector:
+    app: personal-website-app
+
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
+
+

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personal-website-app-deployment
+  namespace: personal-website
+  labels:
+    application: personal-website-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: personal-website-app
+      namespace: personal-website
+  template:
+    metadata:
+      labels:
+        app: personal-website-app
+        namespace: personal-website
+    spec:
+      containers:
+        - name: personal-website-app
+          image: hossamgbm/personal-website-app:81
+          envFrom:
+            - configMapRef:
+                name: site-configmap
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: 200Mi
+              cpu: 100m
+            limits:
+              memory: 250Mi
+              cpu: 300m
