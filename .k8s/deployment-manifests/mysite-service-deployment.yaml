@@ -25,7 +25,7 @@ spec:
                 name: site-configmap
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 4173
           resources:
             requests:
               memory: 100Mi
