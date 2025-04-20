@@ -89,7 +89,7 @@ jobs:
           -H "Content-Type: application/json" \
           --request POST \
           --data '{"event_type": "app-update-service-build-number", "client_payload": { "buildnumber": "'"$BUILD_NUMBER"'" }}' \
-          https://api.github.com/repos/hkandeal/linode-mysiteapp/dispatches
+          https://api.github.com/repos/hkandeal/idea-web-craft/dispatches
 
       - name: Invoked Infra Workflow Slack Notification
         uses: ravsamhq/notify-slack-action@v2
