@@ -6,7 +6,7 @@ metadata:
   labels:
     application: personal-website-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: personal-website-app
