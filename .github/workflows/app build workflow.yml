@@ -37,37 +37,20 @@ jobs:
           token: ${{secrets.API_TOKEN_GITHUB}}
 
       - name: Print new build number
-        run: echo "Build number is $BUILD_NUMBER"
+        run: echo "Build number is "."${{ steps.dotenv.outputs.BUILD_NUMBER }}"
 
-      - name: Set custom build number
-        run: echo "BUILD_NUMBER=1234" >> $GITHUB_ENV 
-      
-       
-      - name: Starting Build & Push Status Slack Notification
-        uses: ravsamhq/notify-slack-action@v2   
+      - name: Starting Build & Push  Status Slack Notification
+        uses: ravsamhq/notify-slack-action@v2
         if: always()
         with:
           status: ${{ job.status }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          message_format: "{emoji} *${{ github.workflow }}* ${{ job.status }} - Build #${{ env.BUILD_NUMBER }} in <${{ github.repositoryUrl }}|${{ github.repository }}>"
-          footer: "Linked Repo <${{ github.repositoryUrl }}|${{ github.repository }}> | <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Workflow>"
+          notification_title: "Starting Build #${{ env.BUILD_NUMBER }}"
+          message_format: "{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>"
+          footer: "Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>"
           notify_when: "failure, success, warning"
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.GITOPS_SLACK_API }}
-          BUILD_NUMBER: ${{ env.BUILD_NUMBER }} 
-
-      # - name: Starting Build & Push  Status Slack Notification
-      #   uses: ravsamhq/notify-slack-action@v2
-      #   if: always()
-      #   with:
-      #     status: ${{ job.status }}
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     notification_title: "Starting Build {BUILD_NUMBER}"
-      #     message_format: "{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>"
-      #     footer: "Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>"
-      #     notify_when: "failure, success, warning"
-      #   env:
-      #     SLACK_WEBHOOK_URL: ${{ secrets.GITOPS_SLACK_API }}
 
       - name: Build docker image
         run: |
