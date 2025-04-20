@@ -37,7 +37,7 @@ jobs:
           token: ${{secrets.API_TOKEN_GITHUB}}
 
       - name: Print new build number
-        run: echo "Starting Build #${{ env.BUILD_NUMBER }}"
+        run: echo "Starting Build "${{ env.BUILD_NUMBER }}"
 
       - name: Starting Build & Push  Status Slack Notification
         uses: ravsamhq/notify-slack-action@v2
