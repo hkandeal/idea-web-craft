@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   preview: {
-    allowedHosts: ['hossam.io']
+    allowedHosts: ['hossam.io' , 'personal-website-app-svc.personal-website']
   },
   
   server: {
