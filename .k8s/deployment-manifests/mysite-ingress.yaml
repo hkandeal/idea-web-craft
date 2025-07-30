@@ -4,10 +4,12 @@ metadata:
   name: mysite-ingress
   namespace: personal-website
   annotations:
+    konghq.com/strip-path: "true"
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    kubernetes.io/ingress.class: kong
+    acme.cert-manager.io/http01-edit-in-place: "true"
 
 spec:
+  ingressClassName: kong
   tls:
   - hosts:
     - hossam.io
