@@ -72,6 +72,12 @@ To connect a domain, navigate to Project > Settings > Domains and click Connect 
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
 
+
 ## run locally
+npm install         # Install dependencies
+npm run build       # Build the app (generates the `dist/` folder)
+npm run preview     # Serve the built app from dist/
+
+## run on docker
 docker build -t personal-website .
 docker run -p 8080:4173 personal-website
