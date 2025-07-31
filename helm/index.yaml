@@ -1,3 +1,14 @@
 apiVersion: v1
-entries: {}
-generated: "2025-07-31T10:33:05.482545+04:00"
+entries:
+  personal-website:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2025-07-31T11:18:13.675582+04:00"
+    description: A secure Helm chart for the personal website
+    digest: 03859b4bb7782dff7e5b0f9f8a506907f8c5b58b8400f4aa470345390de316a6
+    name: personal-website
+    type: application
+    urls:
+    - https://hkandeal.github.io/idea-web-craft/helm/personal-website-1.0.0.tgz
+    version: 1.0.0
+generated: "2025-07-31T11:18:13.674842+04:00"
