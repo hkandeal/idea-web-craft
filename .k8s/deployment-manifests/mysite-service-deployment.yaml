@@ -18,18 +18,20 @@ spec:
         namespace: personal-website
     spec:
       containers:
-        - name: personal-website-app
-          image: hossamgbm/personal-website-app:16
-          envFrom:
-            - configMapRef:
-                name: site-configmap
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 4173
-          resources:
-            requests:
-              memory: 100Mi
-              cpu: 100m
-            limits:
-              memory: 200Mi
-              cpu: 200m
+      - name: personal-website-app
+        image: hossamgbm/personal-website-app:16
+        envFrom:
+        - configMapRef:
+            name: site-configmap
+        - secretRef:
+            name: mysite-db-secret
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 4173
+        resources:
+          requests:
+            memory: 100Mi
+            cpu: 100m
+          limits:
+            memory: 200Mi
+            cpu: 200m

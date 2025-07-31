@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mysite-ingress
+  namespace: personal-website
+  annotations:
+    konghq.com/strip-path: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    acme.cert-manager.io/http01-edit-in-place: "true"
+
+spec:
+  ingressClassName: kong
+  tls:
+  - hosts:
+    - hossam.io
+    secretName: mysite-ingress-tls
+  rules:
+  - host: hossam.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: personal-website-app-svc
+            port:
+              number: 80

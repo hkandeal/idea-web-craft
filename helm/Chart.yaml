@@ -1,0 +1,6 @@
+apiVersion: v2
+name: personal-website
+description: A secure Helm chart for the personal website
+type: application
+version: 1.0.0
+appVersion: "1.0"
