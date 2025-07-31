@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: site-configmap
-  namespace: personal-website
+  namespace: {{ .Release.Namespace }}
 data:
-  APP: mysite
-  MYSQL_HOST: registration-app-mysql.apis-services.svc.cluster.local
+  APP: {{ .Values.configMap.APP }}
+  MYSQL_HOST: {{ .Values.configMap.MYSQL_HOST }}

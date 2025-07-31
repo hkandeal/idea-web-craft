@@ -1,23 +1,19 @@
 replicaCount: 1
-
 image:
   repository: hossamgbm/personal-website-app
-  tag: "16"
+  tag: '16'
   pullPolicy: Always
-
 service:
   type: ClusterIP
   port: 80
   targetPort: 4173
-
 resources:
   requests:
-    memory: "100Mi"
-    cpu: "100m"
+    memory: 100Mi
+    cpu: 100m
   limits:
-    memory: "200Mi"
-    cpu: "200m"
-
+    memory: 200Mi
+    cpu: 200m
 ingress:
   enabled: true
   className: kong
@@ -26,16 +22,13 @@ ingress:
     enabled: true
     secretName: mysite-ingress-tls
   annotations:
-    konghq.com/strip-path: "true"
+    konghq.com/strip-path: 'true'
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    acme.cert-manager.io/http01-edit-in-place: "true"
-
+    acme.cert-manager.io/http01-edit-in-place: 'true'
 configMap:
   APP: mysite
   MYSQL_HOST: registration-app-mysql.apis-services.svc.cluster.local
-
 secretName: mysite-db-secret
-
 secrets:
   MYSQL_USER: root
   MYSQL_PASSWORD: rootpassword

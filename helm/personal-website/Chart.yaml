@@ -2,5 +2,5 @@ apiVersion: v2
 name: personal-website
 description: A secure Helm chart for the personal website
 type: application
-version: 1.0.0
+version: 1.0.1
 appVersion: "1.0"

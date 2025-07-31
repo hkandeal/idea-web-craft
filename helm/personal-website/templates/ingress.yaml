@@ -1,27 +1,28 @@
+{{- if .Values.ingress.enabled }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mysite-ingress
-  namespace: personal-website
+  namespace: {{ .Release.Namespace }}
   annotations:
-    konghq.com/strip-path: "true"
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    acme.cert-manager.io/http01-edit-in-place: "true"
-
+    {{- toYaml .Values.ingress.annotations | nindent 4 }}
 spec:
-  ingressClassName: kong
+  ingressClassName: {{ .Values.ingress.className }}
+  {{- if .Values.ingress.tls.enabled }}
   tls:
-  - hosts:
-    - hossam.io
-    secretName: mysite-ingress-tls
+    - hosts:
+        - {{ .Values.ingress.host }}
+      secretName: {{ .Values.ingress.tls.secretName }}
+  {{- end }}
   rules:
-  - host: hossam.io
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: personal-website-app-svc
-            port:
-              number: 80
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: personal-website-app-svc
+                port:
+                  number: {{ .Values.service.port }}
+{{- end }}
